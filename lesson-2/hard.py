@@ -76,3 +76,21 @@ else:
 #
 # Вход: 11
 # Выход: 5 3
+nomer = 1
+k = 0
+et = 0
+bol = True
+n = int(input('Введите номер комнаты: '))
+while bol:
+    for i in range(nomer):
+        et += 1
+        for j in range(nomer):
+            k += 1
+            # print(et, k)
+            if k == n:
+                bol = False
+                print(et, j+1)
+                break
+        if bol == False:
+            break
+    nomer += 1
