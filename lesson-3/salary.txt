@@ -1,0 +1,5 @@
+Petr - 1500001
+Ivan - 200000
+Dmitry - 300000
+Mariya - 800000
+Inna - 1
