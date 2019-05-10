@@ -30,7 +30,8 @@ list_b = [4, 5, 1]
 
 for l in list_b:
     if l in list_a:
-        list_a.remove(l)
+        for _ in range(list_a.count(l)):
+            list_a.remove(l)
 
 print(list_a)
 
