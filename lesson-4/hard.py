@@ -44,7 +44,7 @@ def process_user_choice(choice, person):
     if choice == '1':
         print(check_account(person))
     elif choice == '2':
-        pattern_count = '(([0].{0,1}[0-9]+)|([1-9]{1,}[0-9]{0,}\.{0,1}[0-9]{0,}))'
+        pattern_count = '(([0]\.{1}[0-9]+)|([1-9]{1,}[0-9]{0,}\.{0,1}[0-9]{0,})|([0]{1}))'
         while True:
             count = input('Сумма к снятию:\n')
 
