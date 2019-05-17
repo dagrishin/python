@@ -8,7 +8,7 @@
 
 import re
 
-pattern_initials = '[А-Я][а-я]+|[A-Z][a-z]+'
+pattern_initials = '^[А-Я][а-я]+$|^[A-Z][a-z]+$'
 pattern_email = '[a-z_0-9]+@[a-z0-9]+\.(ru|com|org)'
 
 print('Введите имя, фамилию, email. Имя и фамилия должны иметь заглавные первые буквы. \nemail - не должен иметь заглавных букв и должен быть в формате: \nтекст в нижнем регистре, допускается нижнее подчеркивание и цифры, потом @, \nпотом текст, допускаются цифры, точка, ru или org или com.')
@@ -18,20 +18,20 @@ email = input('Введите свой email: ')
 
 bol = True
 while bol:
-    if re.match(pattern_initials, name) and len(re.match(pattern_initials, name).group(0)) == len(name):
+    if re.match(pattern_initials, name):
         bol_name = False
 
     else:
         print('Неверно указано имя')
         name = input('Введите свое имя: ')
         bol_name = True
-    if re.match(pattern_initials, surname) and len(re.match(pattern_initials, surname).group(0)) == len(surname):
+    if re.match(pattern_initials, surname):
         bol_surname = False
     else:
         print('Неверно указана фамилия')
         surname = input('Введите свою фамилию: ')
         bol_surname = True
-    if re.match(pattern_email, email) and len(re.match(pattern_email, email).group(0)) == len(email):
+    if re.match(pattern_email, email):
         bol_email = False
     else:
         print('Неверно указан email')
