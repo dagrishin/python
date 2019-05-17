@@ -62,8 +62,7 @@ def verification():
     attempts = 5
     for i in range(attempts):
         user_date = input('Введите номер карты и пин код через пробел:\n')
-        if not (re.match(pattern_split, user_date)
-                and len(re.match(pattern_split, user_date).group(0)) == len(user_date)):
+        if not re.match(pattern_split, user_date):
             print('Вы ввели не коректные данные, осталось {} попытки ввода'.format(attempts - i - 1))
             continue
         else:
@@ -93,8 +92,7 @@ def start():
                            '3. Выход\n'
                            '---------------------\n'
                            'Ваш выбор:\n')
-            if not (re.match(pattern_choice, choice) and len(re.match(pattern_choice, choice).group(0)) == len(
-                    choice)):
+            if not re.match(pattern_choice, choice):
                 print('Такого пункта меню нет')
                 continue
 
