@@ -66,11 +66,19 @@ def delete_file():
         print(f'Файла {parameter} не существует')
 
 def go_to_directory():
-    os.chdir(parameter)
-    print(os.getcwd())
+    if '/' in parameter:
+        dir_path = parameter
+    else:
+        dir_path = os.path.join(os.getcwd(), parameter)
+    if os.path.exists(dir_path):
+        print(f'Вы перешли в {parameter}')
+        os.chdir(dir_path)
+        os.system(f'cd {dir}')
+    else:
+        print('Данной папки не существуе')
 
 def full_path():
-    print(os.getcwd())
+    print(os.getcwd(), os.listdir())
 
 
 do = {
