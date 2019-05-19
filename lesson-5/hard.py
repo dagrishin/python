@@ -57,11 +57,15 @@ def copy_file():
 def delete_file():
     dir_path = os.path.join(os.getcwd(), parameter)
     if os.path.exists(dir_path):
-        try:
-            os.remove(dir_path)
-            print(f'Файл {parameter} удален')
-        except OSError:
-            print(f'Удаление невозможно, {parameter} - у вас нет прав на удаление файла')
+        confirm = input('Точно удалить файл y/n: ')
+        if confirm == 'y':
+            try:
+                os.remove(dir_path)
+                print(f'Файл {parameter} удален')
+            except OSError:
+                print(f'Удаление невозможно, {parameter} - у вас нет прав на удаление файла')
+        else:
+            print('Вы не подтвердили удаление')
     else:
         print(f'Файла {parameter} не существует')
 
