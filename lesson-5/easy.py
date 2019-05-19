@@ -32,15 +32,15 @@ if __name__ == '__main__':
 
     for i in range(1, 10):
         delete_directory(f'dir_{i}')
-#
-#
-# # Задача-2:
-# # Напишите скрипт, отображающий папки текущей директории.
-# for i in os.listdir(path=os.getcwd()):
-#     if os.path.isdir(os.path.join(os.getcwd(), i)):
-print(tuple(i for i in os.listdir(path=os.getcwd()) if os.path.isdir(os.path.join(os.getcwd(), i))))
+    #
+    #
+    # # Задача-2:
+    # # Напишите скрипт, отображающий папки текущей директории.
+    # for i in os.listdir(path=os.getcwd()):
+    #     if os.path.isdir(os.path.join(os.getcwd(), i)):
+    print(tuple(i for i in os.listdir(path=os.getcwd()) if os.path.isdir(os.path.join(os.getcwd(), i))))
 
-# # Задача-3:
-# # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
+    # # Задача-3:
+    # # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
 
-shutil.copyfile(__file__, 'copy_{}'.format(os.path.split(__file__)[1]))
+    shutil.copyfile(__file__, 'copy_{}'.format(os.path.split(__file__)[1]))
