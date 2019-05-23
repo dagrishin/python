@@ -46,16 +46,24 @@ class Enemy(Person):
     def __init__(self):
         super().__init__(name=input('Имя противника: '))
 
+class Game:
+    
+    def start(self, player, enemy):
+        while True:
+            player.attack(enemy)
+            if player.health == 0:
+                print(enemy.name, ' - wins!!!', enemy.health, ' - количество оставшихся единиц здоровья')
+                break
+            enemy.attack(player)
+            if enemy.health == 0:
+                print(player.name, ' - wins!!!', player.health, ' - количество оставшихся единиц здоровья')
+                break
+
+
 
 player = Player()
 enemy = Enemy()
 
-while True:
-    player.attack(enemy)
-    if player.health == 0:
-        print(enemy.name, ' - wins!!!', enemy.health, ' - количество оставшихся единиц здоровья')
-        break
-    enemy.attack(player)
-    if enemy.health == 0:
-        print(player.name, ' - wins!!!', player.health, ' - количество оставшихся единиц здоровья')
-        break
+game = Game()
+
+start1 = game.start(player, enemy)
