@@ -136,9 +136,11 @@ class Loto:
         if not match(pattern, choice):
             print('Такого пункта меню нет')
             print('Вы проиграли')
-            return -1
+            self._player2.numbers_card = -1
+            return False
         else:
             return choice
+
     def games(self):
 
         kegs = NextKeg()
@@ -174,11 +176,6 @@ class Loto:
             print('Вы победили')
 
         input('Нажмите ENTER')
-
-
-
-
-
 
 
 
